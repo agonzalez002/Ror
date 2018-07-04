@@ -1,0 +1,26 @@
+<h2>
+  Add new user
+</h2>
+
+<p class="chemin"><%= link_to "All users", :users %> / Add</p>
+
+<div class="content">
+  <%= form_for User.new do |u| %>
+    <%= u.label :last_name %>
+    <%= u.text_field :last_name %>
+
+    <%= u.label :first_name %>
+    <%= u.text_field :first_name %>
+
+    <%= u.label :phone_number %>
+    <%= u.text_field :phone_number %>
+
+    <%= u.label :email %>
+    <%= u.email_field :email %>
+
+    <%= u.label :date_of_birth %>
+    <%= u.text_field :date_of_birth %>
+
+    <%= u.submit %>
+  <%- end %>
+</div>

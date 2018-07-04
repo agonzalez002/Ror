@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+h2 {
+  display: block;
+  width: 100%;
+  background-color: #008BD1;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+table {
+  width: 98%;
+  text-align: left;
+  border: 1px solid #E8E9E9;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
+}
+
+table thead {
+  height: 50px;
+  border-bottom: 1px solid #E8E9E9;
+}
+
+table tbody tr {
+  height: 50px;
+}
+
+table tbody tr td {
+  border: 0;
+}
+
+table tbody tr td a {
+  text-decoration: none;
+  color: #000;
+  padding-left: 5px;
+}
+
+table tbody tr td a:hover {
+  color: #008BD1;
+}
+
+table tbody tr:nth-child(2n) {
+    background-color: #E8E9E9;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.content input[type="text"] {
+  margin-bottom: 20px;
+}
+
+.chemin {
+  width: 98%;
+  background-color: #E8E9E9;
+  border-radius: 5px;
+  margin: auto;
+  padding: 10px;
+}
+
+.chemin a {
+  color: #000;
+  text-decoration: none;
+}
+
+.chemin a:hover {
+  color: #008BD1;
+}
+
+.btn, .new {
+  display: block;
+  width: 100px;
+  background-color: #008BD1;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  padding: 20px;
+  border: 1px solid #008BD1;
+  text-align: center;
+}
+
+.new {
+  width: 115px;
+}
+
+.btn:hover, .new:hover {
+  background-color: #fff;
+  color: #008BD1;
+}
+
+.edit {
+  padding-left: 5px;
+}
+
+.add {
+  padding-left: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding-left: 10px;
+}

@@ -1,0 +1,22 @@
+<h2>
+  <%= @user.full_name %>
+</h2>
+
+<p class="chemin"><%= link_to "All users", :users %> / <%= @user.full_name %></p>
+
+
+<div class="content">
+  <p>Email : <%= @user.email %></p>
+  <p>Téléphone : <%= @user.phone_number %></p>
+  <p>Date de naissance : <%= @user.date_of_birth %></p>
+  <h3>Photo :</h3>
+  <ul>
+    <% @user.photos.each do |p| %>
+      <li><img src="<%= p.file.thumb.url %>" alt="<%= p.name %>"/></li>
+    <% end %>
+  </ul>
+</div>
+
+<p class="edit"><%= link_to "Edit", edit_user_path(@user), :class => "btn" %></p>
+<p class="edit"><%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Are you sure ?"}, :class => "btn" %></p>
+<p class="edit"><%= link_to "+  Add photo", [:new, @user, :photo], :class => "new" %></p>

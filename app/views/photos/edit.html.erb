@@ -1,0 +1,29 @@
+<h2>
+  <%= @photo.name %>
+</h2>
+
+<p class="chemin"><%= link_to @user.first_name + " " +@user.last_name, [@user] %> / <%= link_to @photo.name, [@user, @photo] %> / Edit</p>
+
+<%- if @photo.errors[:name].present? %>
+  <p class="error">name <%=  @photo.errors[:name].to_sentence %></p>
+<%- end %>
+<%- if @photo.errors[:first_name].present? %>
+  <p class="error">file <%=  @photo.errors[:file].to_sentence %></p>
+<%- end %>
+<%- if @photo.errors[:last_name].present? %>
+  <p class="error">user id <%=  @photo.errors[:user_id].to_sentence %></p>
+<%- end %>
+<div class="content">
+  <%= form_for [@user, @photo] do |u| %>
+    <%= u.label :name %>
+    <%= u.text_field :name %>
+
+    <%= u.label :file %>
+    <%= u.text_field :file %>
+
+    <%= u.label :user_id %>
+    <%= u.number_field :user_id %>
+
+    <%= u.submit %>
+  <%- end %>
+</div>

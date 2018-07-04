@@ -1,0 +1,17 @@
+<h2>
+  Add new photo
+</h2>
+
+<p class="chemin"><%= link_to @user.first_name + " " + @user.last_name, [@user] %> / Add</p>
+
+<div class="content">
+  <%= form_for [@user, @photo] do |u| %>
+    <%= u.label :name %>
+    <%= u.text_field :name %>
+
+    <%= u.label :file %>
+    <%= u.file_field :file %>
+
+    <%= u.submit %>
+  <%- end %>
+</div>

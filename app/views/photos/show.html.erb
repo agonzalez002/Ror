@@ -1,0 +1,16 @@
+<h2>
+  <%= @photo.name %>
+</h2>
+
+<p class="chemin"><%= link_to @user.first_name + " " +@user.last_name, [@user] %> / <%= @photo.name %></p>
+
+
+<div class="content">
+  <p>Name : <%= @photo.name %></p>
+  <p>File : <%= @photo.file %></p>
+  <p>User : <%= @photo.user_id %></p>
+</div>
+
+
+<p class="edit"><%= link_to "Edit", [:edit, @user, @photo], :class => "btn" %></p>
+<p class="edit"><%= link_to "Delete", [@user, @photo], method: :delete, data: {confirm: "Are you sure ?"}, :class => "btn" %></p>

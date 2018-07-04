@@ -1,0 +1,35 @@
+<h2>
+  <%= @user.full_name %>
+</h2>
+
+<p class="chemin"><%= link_to "All users", :users %> / <%= link_to @user.full_name, user_path(@user) %> / Edit</p>
+
+<%- if @user.errors[:email].present? %>
+  <p class="error">email <%=  @user.errors[:email].to_sentence %></p>
+<%- end %>
+<%- if @user.errors[:first_name].present? %>
+  <p class="error">First name <%=  @user.errors[:first_name].to_sentence %></p>
+<%- end %>
+<%- if @user.errors[:last_name].present? %>
+  <p class="error">Last name <%=  @user.errors[:last_name].to_sentence %></p>
+<%- end %>
+<div class="content">
+  <%= form_for @user do |u| %>
+    <%= u.label :last_name %>
+    <%= u.text_field :last_name %>
+
+    <%= u.label :first_name %>
+    <%= u.text_field :first_name %>
+
+    <%= u.label :phone_number %>
+    <%= u.text_field :phone_number %>
+
+    <%= u.label :email %>
+    <%= u.email_field :email %>
+
+    <%= u.label :date_of_birth %>
+    <%= u.text_field :date_of_birth %>
+
+    <%= u.submit %>
+  <%- end %>
+</div>

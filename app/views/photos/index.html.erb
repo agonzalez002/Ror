@@ -1,0 +1,24 @@
+<h2>
+  Photo list :
+</h2>
+
+<p class="add"><%= link_to "+  Add photo", new_photo_path(), :class => "new" %></p>
+
+<table>
+  <thead>
+    <th>File</th>
+    <th>Name</th>
+    <th>User ID</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <%- @photos.each do |photo| %>
+      <tr>
+        <td><%= link_to photo_path(photo) do %> <%= photo.file %> <%- end %></td>
+        <td><%= photo.name %></td>
+        <td><%= photo.user_id %></td>
+        <td><%= link_to "X", photo_path(photo), method: :delete, data: {confirm: "Are you sure ?"} %></td>
+      </tr>
+    <%- end %>
+  </tbody>
+</table>
